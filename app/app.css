@@ -1,0 +1,31 @@
+/* app css stylesheet */
+body {
+    background-color: black;
+    color: white;
+}
+
+/*
+html, body {
+    margin: 0;
+    height: 100%;
+}
+*/
+.drag {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    margin: 20px;
+}
+
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dragRect {
+    width: 300px;
+}
