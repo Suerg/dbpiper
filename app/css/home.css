@@ -13,7 +13,7 @@ html, body {
 .drag {
     display: inline-block;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     margin: 20px;
 }
 
