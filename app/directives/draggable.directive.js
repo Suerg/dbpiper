@@ -23,10 +23,7 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
                 {
                     var topString = 'top';
                     var leftString = 'left';
-                    if(element.css('position') === 'absolute') {
-                        topString = 'margin-top';
-                        leftString = 'margin-left';
-                    }
+
                     var top = parseInt(element.css(topString).slice(0, -2));
                     var left = parseInt(element.css(leftString).slice(0, -2));
 
