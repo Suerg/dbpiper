@@ -35,3 +35,8 @@ html, body {
 .dragRect {
     width: 300px;
 }
+sandbox {
+    overflow: hidden;
+    display: block;
+    background-color: #c2b280;
+}
