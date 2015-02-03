@@ -13,13 +13,16 @@ html, body {
     overflow: auto;
 }
 
-.drag {;
+.dragStyle {
+    background-color: #808080;
+}
+
+.drag {
     display: inline-block;
     cursor: pointer;
     position: relative;
     margin: 20px;
     z-index: 1;
-    background-color: #808080;
     float: none;
 }
 
