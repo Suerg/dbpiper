@@ -2,7 +2,7 @@
  * Created by Suerg on 1/24/15.
  */
 
-angular.module('dbpiper').directive('drag', ['$document', function ($document) {
+angular.module('dbpiper').directive('drag', ['$q', function ($q) {
     return {
         restrict: 'AE',
         scope: {
@@ -13,14 +13,18 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
         templateUrl: 'templates/drag.template.html',
         transclude: true,
         controller: function ($scope) {
+            $scope.dragCreatedDeferred = $q.defer();
+            $scope.dragCreatedPromise = $scope.dragCreatedDeferred.promise;
             this.toggleLock = function () {
-                $scope.locked = !$scope.locked;
+                $scope.dragCreatedPromise.then(function() {
+                    $scope.locked = !$scope.locked;
 
-                if ($scope.locked) {
-                    $scope.clearCss();
-                } else {
-                    $scope.setCss();
-                }
+                    if ($scope.locked) {
+                        $scope.clearCss();
+                    } else {
+                        $scope.setCss();
+                    }
+                });
             };
             this.getLocked = function () {
                 return $scope.locked;
@@ -96,6 +100,8 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
                     scope.$emit('dragging', false);
                 }
             });
+
+            scope.dragCreatedDeferred.resolve();
         }
     }
 }]);
