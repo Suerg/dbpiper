@@ -1,9 +1,16 @@
 <sandbox width="1600" height="1000" drag nostyle>
-    <lock></lock>
-    <edit></edit>
-    <ng-include src="'partials/text1.partial.html'" drag>
-    </ng-include>
+    <toolbar>
+        <lock></lock>
+        <edit></edit>
+    </toolbar>
 
-    <ng-include src="'partials/text2.partial.html'" drag class="dragRect">
-    </ng-include>
+    <drag>
+        <ng-include src="'partials/text1.partial.html'">
+        </ng-include>
+    </drag>
+
+    <drag class="dragRect">
+        <ng-include src="'partials/text2.partial.html'">
+        </ng-include>
+    </drag>
 </sandbox>

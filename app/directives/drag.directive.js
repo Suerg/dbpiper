@@ -10,6 +10,8 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
             setCss: '=?',
             clearCss: '=?'
         },
+        templateUrl: 'templates/drag.template.html',
+        transclude: true,
         controller: function ($scope) {
             this.toggleLock = function () {
                 $scope.locked = !$scope.locked;
@@ -55,9 +57,6 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
             element.addClass('dragFunctionality');
 
             element.on('mousedown', function (event) {
-                if (scope.childrenDragging) {
-                    alert("dragging");
-                }
                 if (!scope.childrenDragging && !scope.locked) {
                     scope.dragging = true;
                     scope.lastX = event.clientX;
