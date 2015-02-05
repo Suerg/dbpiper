@@ -38,12 +38,12 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
                 if (scope.nostyle == undefined) {
                     element.addClass('dragStyle');
                 }
-                element.addClass('drag');
+                element.addClass('dragCursor');
                 element.addClass('noselect');
             };
             scope.clearCss = function () {
                 element.removeClass('dragStyle');
-                element.removeClass('drag');
+                element.removeClass('dragCursor');
             };
             scope.locked = false;
             scope.dragging = false;
@@ -52,6 +52,7 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
             scope.childrenDragging = false;
 
             scope.setCss();
+            element.addClass('dragFunctionality');
 
             element.on('mousedown', function (event) {
                 if (scope.childrenDragging) {
