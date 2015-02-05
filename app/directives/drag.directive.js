@@ -6,9 +6,7 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
     return {
         restrict: 'AE',
         scope: {
-            locked: '=?',
-            setCss: '=?',
-            clearCss: '=?'
+            locked: '=?'
         },
         templateUrl: 'templates/drag.template.html',
         transclude: true,
