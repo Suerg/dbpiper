@@ -8,7 +8,7 @@ angular.module('dbpiper').directive('lock', ['$document', '$compile', function (
         templateUrl: 'templates/lock.template.html',
         link: function (scope, element, attrs, dragCtrl) {
             scope.dragCtrl = dragCtrl;
-            //scope.dragCtrl.toggleLock(); //defaults the drag directive to locked if it has a lock. otherwise it will always be draggable
+            scope.dragCtrl.toggleLock(); //defaults the drag directive to locked if it has a lock. otherwise it will always be draggable
         }
     }
 }]);

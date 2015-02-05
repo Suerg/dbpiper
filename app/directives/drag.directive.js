@@ -6,11 +6,19 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
     return {
         restrict: 'AE',
         scope: {
-            locked: '=?'
+            locked: '=?',
+            setCss: '=?',
+            clearCss: '=?'
         },
         controller: function ($scope) {
             this.toggleLock = function () {
                 $scope.locked = !$scope.locked;
+
+                if ($scope.locked) {
+                    $scope.clearCss();
+                } else {
+                    $scope.setCss();
+                }
             };
             this.getLocked = function () {
                 return $scope.locked;
@@ -25,17 +33,25 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
         },
         link: function (scope, element, attrs) {
 
+            scope.nostyle = attrs.nostyle;
+            scope.setCss = function () {
+                if (scope.nostyle == undefined) {
+                    element.addClass('dragStyle');
+                }
+                element.addClass('drag');
+                element.addClass('noselect');
+            };
+            scope.clearCss = function () {
+                element.removeClass('dragStyle');
+                element.removeClass('drag');
+            };
             scope.locked = false;
             scope.dragging = false;
             scope.lastX = 0;
             scope.lastY = 0;
             scope.childrenDragging = false;
 
-            if (attrs.nostyle == undefined) {
-                element.addClass('dragStyle');
-            }
-            element.addClass('drag');
-            element.addClass('noselect');
+            scope.setCss();
 
             element.on('mousedown', function (event) {
                 if (scope.childrenDragging) {
