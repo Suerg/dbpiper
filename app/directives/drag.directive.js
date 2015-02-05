@@ -27,7 +27,7 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
             this.getLocked = function () {
                 return $scope.locked;
             };
-            $scope.$on('dragging', function (event, data) {
+            $scope.$on(Constants().EVENTS.DRAGGING, function (event, data) {
                 if (data) {
                     $scope.childrenDragging = true;
                 } else {
@@ -64,7 +64,7 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
                     scope.lastX = event.clientX;
                     scope.lastY = event.clientY;
 
-                    scope.$emit('dragging', true);
+                    scope.$emit(Constants().EVENTS.DRAGGING, true);
                 }
             });
             angular.element(document).bind('mousemove', function (event) {
@@ -95,7 +95,7 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
                 if (scope.dragging) {
                     scope.dragging = false;
 
-                    scope.$emit('dragging', false);
+                    scope.$emit(Constants().EVENTS.DRAGGING, false);
                 }
             });
 

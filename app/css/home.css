@@ -37,6 +37,26 @@ html, body {
     user-select: none;
 }
 
+/*p, span, a {*/
+    /*-webkit-touch-callout: initial;*/
+    /*-webkit-user-select: initial;*/
+    /*-khtml-user-select: initial;*/
+    /*-moz-user-select: initial;*/
+    /*-ms-user-select: initial;*/
+    /*user-select: initial;*/
+    /*cursor: default;*/
+/*}*/
+
+.select {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+    cursor: default;
+}
+
 .dragRect {
     width: 300px;
 }

@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="css/home.css">
 
 </head>
-<body class="noselect" ng-app="dbpiper">
+<body ng-app="dbpiper">
 
 <script src="../javascript/jquery-1.11.2.js"></script>
+<script src="../javascript/bootstrap.js"></script>
 <script src="../javascript/angular.js"></script>
 <script src="../javascript/angular-route.js"></script>
-<script src="../javascript/bootstrap.js"></script>
 <script src="../javascript/underscore.js"></script>
 <script src="app.js"></script>
 <script src="controllers/home.controller.js"></script>
@@ -27,7 +27,12 @@
 <script src="directives/lock.directive.js"></script>
 <script src="directives/edit.directive.js"></script>
 
+<script src="javascript/Constants.js"></script> <!--Should always be included last to prevent overwriting of Constant function-->
+
 <div ng-view ng-controller="HomeCtrl"></div>
+
+<ng-include src="'partials/edit-modal.partial.html'">
+</ng-include>
 
 </body>
 </html>

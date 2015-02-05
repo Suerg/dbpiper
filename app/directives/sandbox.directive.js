@@ -6,7 +6,7 @@ angular.module('dbpiper').directive('sandbox', ['$document', function ($document
         restrict: 'AE',
         controller: function ($scope) {
             this.edit = function () {
-                angular.element('#editModal').modal('toggle');
+                //angular.element('#editModal').modal('toggle');
             };
         },
         link: function ($scope, element, attrs) {
