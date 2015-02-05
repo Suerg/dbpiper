@@ -38,12 +38,12 @@ angular.module('dbpiper').directive('drag', ['$document', function ($document) {
                 if (scope.nostyle == undefined) {
                     element.addClass('dragStyle');
                 }
-                element.addClass('dragCursor');
+                element.addClass('interactible');
                 element.addClass('noselect');
             };
             scope.clearCss = function () {
                 element.removeClass('dragStyle');
-                element.removeClass('dragCursor');
+                element.removeClass('interactible');
             };
             scope.locked = false;
             scope.dragging = false;

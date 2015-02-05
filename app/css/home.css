@@ -4,7 +4,6 @@ body {
     color: white;
 }
 
-
 html, body {
     margin: 0;
     padding: 0;
@@ -25,10 +24,9 @@ html, body {
     z-index: 0;
 }
 
-.dragCursor {
+.interactible {
     cursor: pointer;
 }
-
 
 .noselect {
     -webkit-touch-callout: none;
@@ -38,19 +36,29 @@ html, body {
     -ms-user-select: none;
     user-select: none;
 }
+
 .dragRect {
     width: 300px;
 }
+
 sandbox {
     overflow: hidden;
     display: block;
     background-color: #c2b280;
 }
+
 lock {
     float: right;
     margin: 10px;
     margin-top: 5px;
-    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+edit {
+    float: right;
+    margin: 10px;
+    margin-top: 5px;
     position: relative;
     z-index: 1;
 }
