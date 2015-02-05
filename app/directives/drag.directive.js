@@ -37,16 +37,21 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
         },
         link: function (scope, element, attrs) {
 
-            scope.nostyle = attrs.nostyle;
+            scope.nostyle = typeof attrs.nostyle !== 'undefined';
+            scope.text = typeof attrs.text !== 'undefined';
+
             scope.setCss = function () {
-                if (scope.nostyle == undefined) {
+                if (!scope.nostyle) {
                     element.addClass('dragStyle');
+                }
+                if(scope.text) {
+                    element.addClass('textDrag')
                 }
                 element.addClass('interactible');
                 element.addClass('noselect');
             };
             scope.clearCss = function () {
-                element.removeClass('dragStyle');
+                element.removeClass('textDrag')
                 element.removeClass('interactible');
             };
             scope.locked = false;
