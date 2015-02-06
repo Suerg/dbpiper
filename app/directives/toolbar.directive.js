@@ -19,8 +19,8 @@ angular.module('dbpiper').directive('toolbar', [function () {
         },
         link: function (scope, element, attrs) {
             scope.$watch('locked', function(locked) {
-                //handles case where an element was locked initially
-                if(locked) {
+                //handles case where an element was unlocked initially
+                if(!locked) {
                     element.addClass('visible');
                 }
             });
@@ -32,7 +32,7 @@ angular.module('dbpiper').directive('toolbar', [function () {
             });
             element.on('mouseout', function () {
                 scope.$apply(function () {
-                    if(!scope.locked) {
+                    if(scope.locked) {
 
                         element.removeClass('visible');
                     }
