@@ -1,3 +1,10 @@
 .modal-content{
     background-color: black;
 }
+.modal-header .close {
+    color: #b6b4b8;
+    opacity: 1;
+}
+.modal-header .close:hover {
+    color: #ffffff;
+}
