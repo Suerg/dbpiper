@@ -41,18 +41,6 @@ angular.module('dbpiper').directive('lock', [function () {
                     scope.toolbarCtrl.setLocked(false);
                 }
             }
-
-            /*scope.$watch('locked', function(locked) {
-                if(scope.toolbarCtrl) {
-                    scope.toolbarCtrl.setLocked(locked);
-                }
-            });
-
-            if(scope.locked === true) {
-                scope.dragCtrl.toggleLock();
-            } else {
-                scope.locked = false;
-            }*/
         }
     }
 }]);
