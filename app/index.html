@@ -20,7 +20,12 @@
 <script src="../javascript/angular-route.js"></script>
 <script src="../javascript/underscore.js"></script>
 <script src="app.js"></script>
+
 <script src="controllers/home.controller.js"></script>
+<script src="controllers/music.controller.js"></script>
+
+<script src="services/music.service.js"></script>
+
 <script src="directives/drag.directive.js"></script>
 <script src="directives/sandbox.directive.js"></script>
 <script src="directives/toolbar.directive.js"></script>
@@ -29,10 +34,7 @@
 
 <script src="javascript/Constants.js"></script> <!--Should always be included last to prevent overwriting of Constant function-->
 
-<div ng-view ng-controller="HomeCtrl"></div>
-
-<ng-include src="'partials/edit-modal.partial.html'">
-</ng-include>
+<div ng-view></div>
 
 </body>
 </html>

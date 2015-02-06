@@ -8,5 +8,9 @@ angular.module('dbpiper', [
         templateUrl: 'templates/home.template.html',
         controller: 'HomeCtrl'
     });
+    $routeProvider.when('/music', {
+        templateUrl: 'templates/music.template.html',
+        controller: 'MusicCtrl'
+    });
     $logProvider.debugEnabled(true);
 }]);
