@@ -92,6 +92,10 @@ toolbar.visible {
 }
 
 
+.resizeHorizontal {
+    cursor: e-resize;
+}
+
 edit,lock {
     display: inline-block;
     margin-left: 10px;
