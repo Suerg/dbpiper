@@ -51,8 +51,8 @@ angular.module('dbpiper').directive('drag', ['$q', function ($q) {
                 element.addClass('noselect');
             };
             scope.clearCss = function () {
-                element.removeClass('textDrag')
                 element.removeClass('interactible');
+                element.removeClass('noselect');
             };
             scope.locked = false;
             scope.dragging = false;

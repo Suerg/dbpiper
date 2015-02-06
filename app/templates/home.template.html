@@ -1,15 +1,21 @@
 <sandbox width="1600" height="1000" drag>
     <toolbar>
         <edit></edit>
-        <lock></lock>
+        <lock locked="true"></lock>
     </toolbar>
 
     <drag text>
+        <toolbar>
+            <lock></lock>
+        </toolbar>
         <ng-include src="'partials/text1.partial.html'">
         </ng-include>
     </drag>
 
     <drag text class="dragRect">
+        <toolbar>
+            <lock></lock>
+        </toolbar>
         <ng-include src="'partials/text2.partial.html'">
         </ng-include>
     </drag>

@@ -1,25 +1,28 @@
-<div class="modal fade" data-backdrop="static" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content editModalContent">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">Edit Sandbox</h4>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="control-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                <form name="editForm" ng-submit=""> <!--TODO: Connect to angular-->
+                    <div class="form-group editFormGroup">
+                        <div class="widthDiv">
+                            <label for="width" class="control-label editContent">Width:</label>
+                            <input type="text" ng-pattern="/^[0-9]+$/" maxlength="12" class="form-control editTextInput editContent" id="width">
+                        </div>
+                        <div class="heightDiv">
+                            <label for="height" class="control-label editContent">Height:</label>
+                            <input type="text" ng-pattern="/^[0-9]+$/" maxlength="12" class="form-control editTextInput editContent" id="height">
+                        </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
             </div>
         </div>
     </div>
